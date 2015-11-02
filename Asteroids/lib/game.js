@@ -5,8 +5,8 @@
     this.addAsteroids()
   };
 
-  Asteroids.DIM_X = 300;
-  Asteroids.DIM_Y = 150;
+  Asteroids.DIM_X = window.innerWidth;
+  Asteroids.DIM_Y = window.innerHeight;
   Asteroids.NUM_ASTEROIDS = 20;
 
   Game.prototype.addAsteroids = function () {

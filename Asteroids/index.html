@@ -16,11 +16,14 @@
     <script src="./lib/movingObject.js"></script>
     <script src="./lib/asteroid.js"></script>
     <script src="./lib/game.js"></script>
+    <script src="./lib/gameView.js"></script>
     <script>
       var canvas = document.getElementById("canvas");
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
       var ctx = canvas.getContext("2d");
       var g = new Asteroids.Game();
-      g.draw(ctx);
+      var gv = new Asteroids.GameView(ctx, g);
     </script>
   </body>
 </html>
