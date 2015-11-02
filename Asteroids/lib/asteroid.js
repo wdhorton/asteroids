@@ -2,7 +2,7 @@
   var Asteroids = window.Asteroids = window.Asteroids || {};
 
   Asteroids.COLOR = "grey";
-  Asteroids.RADIUS = 5;
+  Asteroids.RADIUS = 20;
 
   var Asteroid = Asteroids.Asteroid = function (args) {
     args.color = Asteroids.COLOR;
@@ -12,5 +12,11 @@
   };
 
   Asteroids.Util.inherits(Asteroid, Asteroids.MovingObject);
+
+  Asteroid.prototype.collideWith = function (otherObject) {
+    if (otherObject instanceof Asteroids.Ship) {
+      otherObject.relocate();
+    }
+  };
 
 })();

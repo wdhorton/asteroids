@@ -14,8 +14,18 @@
   };
 
   Util.randomVec = function (length) {
-    var randomNum = Math.random() * length;
-    var remainder = length * length - randomNum * randomNum;
-    return [randomNum, Math.sqrt(remainder)];
+    var randomX = (Math.random() - 0.5) * length * 2;
+    var randomY = Math.sqrt(length * length - randomX * randomX);
+    if (Math.random() > 0.5){
+      randomY *= -1
+    }
+    return [randomX, randomY];
   };
+
+  Util.distance = function (pos1, pos2) {
+    return Math.sqrt((pos1[0] - pos2[0]) * (pos1[0] - pos2[0]) +
+      (pos1[1] - pos2[1]) * (pos1[1] - pos2[1]));
+  }
+
+
 })();
