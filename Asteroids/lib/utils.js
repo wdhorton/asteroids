@@ -1,7 +1,9 @@
 (function (){
   var Asteroids = window.Asteroids = window.Asteroids || {}
 
-  Asteroids.Util.inherits = function (ChildClass, ParentClass) {
+  var Util = Asteroids.Util = {};
+
+  Util.inherits = function (ChildClass, ParentClass) {
     var Surrogate = function() {};
 
     Surrogate.prototype = ParentClass.prototype;
@@ -11,7 +13,7 @@
     ChildClass.prototype.constructor = ChildClass;
   };
 
-  Asteroids.Util.randomVec(length) {
+  Util.randomVec = function (length) {
     var randomNum = Math.random() * length;
     var remainder = length * length - randomNum * randomNum;
     return [randomNum, Math.sqrt(remainder)];
